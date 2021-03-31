@@ -1,4 +1,0 @@
-
-Online MongoDB = "mongodb+srv://nistagram:nistagramMONGODB@cluster0.dfcda.mongodb.net/nistagram?retryWrites=true&w=majority"
-
-Local MongoDB = "mongodb+srv://nistagram:nistagramMONGODB@cluster0.dfcda.mongodb.net/nistagram?retryWrites=true&w=majority"
