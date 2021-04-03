@@ -55,4 +55,25 @@ const allPosts = (req, res) => {
 }
 
 
+/**
+ * All posts of a User
+ * @param {*} req 
+ * @param {*} res 
+*/
+const userProfilePosts = (req, res) => {
+    PostModel.find({ postedBy: req.user._id })
+        .populate("postedBy", "_id name")
+        .then(posts => {
+            res.status(200).json({
+                message: "user profile posts fetched",
+                data: posts
+            })
+        })
+        .catch(error => {
+            return res.status(401).json({
+                error
+            })
+        })
+}
+
 module.exports = { createPost, allPosts, userProfilePosts };
