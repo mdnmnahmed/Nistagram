@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {ObjectId} = mongoose.Schema.Types;
+const { ObjectId } = mongoose.Schema.Types;
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -12,12 +12,15 @@ const postSchema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        require: true
     },
     postedBy: {
         type: ObjectId,
         ref: "User"
+    },
+    created_date: {
+        type: Date,
+        default: new Date()
     }
 });
 
-mongoose.model("Post", postSchema);
+module.exports = mongoose.model("Post", postSchema);

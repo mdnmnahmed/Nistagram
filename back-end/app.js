@@ -9,7 +9,8 @@ app.use(express.json()); //Top at middleware
 
 
 //Routers
-app.use('/', require('./routes/user/userRoute'));
+app.use('/', require('./routes/userRoute'));
+app.use('/post', require('./routes/postRoute'));
 
 //MongoDB Connection
 mongoose.connect(process.env.DB_URI,

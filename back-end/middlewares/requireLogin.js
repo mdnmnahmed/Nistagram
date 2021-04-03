@@ -20,9 +20,10 @@ module.exports = async (req, res, next) => {
         }
 
         const { _id } = payload;
-        const userData = userModel.findById(_id);
-        req.user = userData;
-
-        next();
+        userModel.findById(_id)
+            .then(userData => {
+                req.user = userData;
+                next();
+            })
     })
 }
