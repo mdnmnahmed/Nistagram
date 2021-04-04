@@ -20,7 +20,7 @@ mongoose.connection.on('connected', () => {
     console.log("Connected With DB");
 });
 mongoose.connection.on('error', (err) => {
-    console.log("Errot Occured while Connecting with DB : " + err);
+    console.log("Error Occured while Connecting with DB : " + err);
 });
 
 const PORT = process.env.PORT || 5000;
