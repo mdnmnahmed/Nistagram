@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "136e00e3-12ac-4d6e-8848-d3bf965f9051",
+		"name": "Nistagram",
+		"description": "try",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Numan\",\r\n    \"email\": \"numanaana@gmail.com\",\r\n    \"password\": \"123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "http://localhost:5000/api/save_contacts"
+					},
+					"response": [
+						{
+							"name": "Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Numan\",\r\n    \"email\": \"numanaan@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "252"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fc-NL2ktHW83NRrduvXV5vX3qGuIuk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Apr 2021 01:06:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"created_date\": \"2021-04-03T01:06:21.365Z\",\n        \"_id\": \"6067bfa0ac5337370c4de47b\",\n        \"name\": \"Numan\",\n        \"email\": \"numanaan@gmail.com\",\n        \"password\": \"$2a$06$rkyuwZLYGVNuyoihNckQ3.xzqDpHg0rEWnBQ7cKZWNclQpH0lnW3K\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"numanaanan@gmail.com\",\r\n    \"password\": \"123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"signin"
+							]
+						},
+						"description": "http://localhost:5000/api/save_contacts"
+					},
+					"response": [
+						{
+							"name": "Signin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"numanaanan@gmail.com\",\r\n    \"password\": \"123\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-lvG9h6qmfwdpHMKnl7m40hfBBdA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Apr 2021 01:40:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully signedin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "create_post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"post 3\",\r\n    \"body\": \"nn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/post/create_post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"post",
+								"create_post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create_post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"post 3\",\r\n    \"body\": \"nn\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/post/create_post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"post",
+										"create_post"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"de-2BmtQbmiiBW159I0+iV58W/+SK0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Apr 2021 03:28:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"created_date\": \"2021-04-03T03:28:29.610Z\",\n        \"_id\": \"6067e0e867c69c15f4243a7b\",\n        \"title\": \"post 3\",\n        \"body\": \"nn\",\n        \"postedBy\": {\n            \"_id\": \"6067c1b2d2d0962a74348563\",\n            \"name\": \"Numan\",\n            \"email\": \"numanaanan@gmail.com\",\n            \"__v\": 0\n        },\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "all_posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"post 1\",\r\n    \"body\": \"data\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/post/all_posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"post",
+								"all_posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "all_posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"post 1\",\r\n    \"body\": \"data\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/post/all_posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"post",
+										"all_posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1338"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53a-xx1eUdtdqpAtxvPaH+eSnra6k8Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Apr 2021 03:50:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"photo\": \"no photo\",\n            \"created_date\": \"2021-04-03T03:50:28.055Z\",\n            \"_id\": \"5f0e9202ffbb4f293ca67190\",\n            \"title\": \"Title 1\",\n            \"body\": \"Body 1\",\n            \"postedBy\": {\n                \"_id\": \"5f0e6b668b814830489e2ff4\",\n                \"email\": \"numan@gmail.com\",\n                \"name\": \"numan\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"no photo\",\n            \"created_date\": \"2021-04-03T03:50:28.055Z\",\n            \"_id\": \"5f0e92886dadb83410c630f9\",\n            \"title\": \"Title 2\",\n            \"body\": \"Body 2\",\n            \"postedBy\": {\n                \"_id\": \"5f0e6b668b814830489e2ff4\",\n                \"email\": \"numan@gmail.com\",\n                \"name\": \"numan\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"no photo\",\n            \"created_date\": \"2021-04-03T03:50:28.055Z\",\n            \"_id\": \"5f0e9a2187212230b8b4fa68\",\n            \"title\": \"Try Post 1\",\n            \"body\": \"Try Body \",\n            \"postedBy\": {\n                \"_id\": \"5f0e990187212230b8b4fa67\",\n                \"email\": \"try@gmail.com\",\n                \"name\": \"try\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T03:50:28.055Z\",\n            \"_id\": \"6067dfc011285c3060c21469\",\n            \"title\": \"post 1\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\",\n                \"email\": \"numanaanan@gmail.com\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T03:50:28.055Z\",\n            \"_id\": \"6067e0664263e031f030875e\",\n            \"title\": \"post 2\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\",\n                \"email\": \"numanaanan@gmail.com\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T03:28:29.610Z\",\n            \"_id\": \"6067e0e867c69c15f4243a7b\",\n            \"title\": \"post 3\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\",\n                \"email\": \"numanaanan@gmail.com\"\n            },\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "profile_posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/post/profile_posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"post",
+								"profile_posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "profile_posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3YzFiMmQyZDA5NjJhNzQzNDg1NjMiLCJpYXQiOjE2MTc0MTQwNDh9.akMZ91xfp8600o1NQNqZoEN1F7mFdaT2K3Zqzq0q4gM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/post/profile_posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"post",
+										"profile_posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "607"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25f-7GKSJ8NKlfd8u33+TAVnC6wPyvc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Apr 2021 04:21:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"user profile posts fetched\",\n    \"data\": [\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T04:20:38.035Z\",\n            \"_id\": \"6067dfc011285c3060c21469\",\n            \"title\": \"post 1\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T04:20:38.035Z\",\n            \"_id\": \"6067e0664263e031f030875e\",\n            \"title\": \"post 2\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\"\n            },\n            \"__v\": 0\n        },\n        {\n            \"photo\": \"\",\n            \"created_date\": \"2021-04-03T03:28:29.610Z\",\n            \"_id\": \"6067e0e867c69c15f4243a7b\",\n            \"title\": \"post 3\",\n            \"body\": \"nn\",\n            \"postedBy\": {\n                \"_id\": \"6067c1b2d2d0962a74348563\",\n                \"name\": \"Numan\"\n            },\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
