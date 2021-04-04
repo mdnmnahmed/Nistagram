@@ -33,27 +33,6 @@ const Signin = () => {
             console.log('error occured: ', err.response.data.error);
             return M.toast({ html: err.response.data.error, classes: 'red darken-4' })
         }
-
-        // fetch('/signin', {
-        //     method: "post",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         email,
-        //         password
-        //     })
-        // }).then(res => res.json())
-        //     .then(data => {
-        //         if (data.error) {
-        //             M.toast({ html: data.error, classes: '#b71c1c red darken-4' })
-        //         } else {
-        //             M.toast({ html: "SignedIn Success", classes: '#33691e light-green darken-4' });
-        //             history.push('/');
-        //         }
-        //     }).catch(err => {
-        //         console.log("Error Occued : " + err);
-        //     })
     }
 
 
