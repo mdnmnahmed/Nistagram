@@ -16,23 +16,28 @@ const CreatePost = () => {
     const createPost = async (event) => {
         event.preventDefault();
 
-        const fileData = await new FormData()
-        fileData.append("file", image)
-        fileData.append("upload_preset", "nistagram")
-        fileData.append("cloud_name", "nahnnn")
-
         try {
-            const fileUploadData = await axios.post(process.env.REACT_APP_CLOUDINARY_API_BASE_URL + '/image/upload', fileData)
-                .catch(err => {
-                    throw new Error('Filed to Upload Picture, try again')
-                })
-            console.log('fileUploadData: ', fileUploadData);
-            setUrl(fileUploadData.data.url);
+            let fileUrl;
+            let fileUploadData;
+            if (image) {
+                const fileData = await new FormData()
+                fileData.append("file", image)
+                fileData.append("upload_preset", "nistagram")
+                fileData.append("cloud_name", "nahnnn")
+
+                fileUploadData = await axios.post(process.env.REACT_APP_CLOUDINARY_API_BASE_URL + '/image/upload', fileData)
+                    .catch(err => {
+                        throw new Error('Filed to Upload Picture, try again')
+                    })
+                console.log('fileUploadData: ', fileUploadData);
+                setUrl(fileUploadData.data.url);
+                fileUrl = fileUploadData.data.url;
+            }
 
             const newPostData = {
                 title,
                 body,
-                pic: fileUploadData.data.url
+                pic: fileUrl
             }
 
             const headers = {
