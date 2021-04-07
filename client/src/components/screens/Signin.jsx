@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import M from 'materialize-css';
 import axios from 'axios';
+import { setCookie } from '../../utils/CookiesHelper';
 
 const Signin = () => {
     const history = useHistory();
@@ -26,8 +27,11 @@ const Signin = () => {
                 password
             }
             const signedInData = await axios.post(process.env.REACT_APP_API_URL + '/signin', userData);
-            M.toast({ html: signedInData.data.message, classes: 'green darken-4' })
             console.log('signedInData res: ', signedInData);
+            setCookie('user_token', signedInData.data.token)
+            setCookie('user_data', JSON.stringify(signedInData.user))
+
+            M.toast({ html: signedInData.data.message, classes: 'green darken-4' })
             history.push('/');
         } catch (err) {
             console.log('error occured: ', err.response.data.error);
