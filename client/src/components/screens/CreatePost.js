@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import M from 'materialize-css';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { getCookie } from '../../utils/CookiesHelper';
 
 const CreatePost = () => {
     const [title, setTitle] = useState('');
@@ -34,12 +35,13 @@ const CreatePost = () => {
                 pic: fileUploadData.data.url
             }
 
-            const token = {
-                
+            const headers = {
+                "Authorization": "bearer " + getCookie('user_token')
             }
 
-            const uploadedPost = await axios.post(`${process.env.REACT_APP_API_URL}/post/create_post`, newPostData)
+            const uploadedPost = await axios.post(`${process.env.REACT_APP_API_URL}/post/create_post`, newPostData, { headers })
             console.log(uploadedPost);
+
             M.toast({ html: "Post uploaded", classes: 'light-green darken-4' });
             history.push('/');
 
@@ -47,32 +49,6 @@ const CreatePost = () => {
             console.log('Error Occured : ', err);
             M.toast({ html: err, classes: 'red darken-4' })
         }
-
-        return;
-        fetch('/createpost', {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title,
-                body,
-                pic: url
-            })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.error) {
-                    M.toast({ html: data.error, classes: '#b71c1c red darken-4' })
-                } else {
-                    M.toast({ html: "Post uploaded", classes: '#33691e light-green darken-4' });
-                    history.push('/');
-                }
-            })
-            .catch(err => {
-                console.log("Error Occued while uploading post: " + err);
-            })
     }
 
     return (
