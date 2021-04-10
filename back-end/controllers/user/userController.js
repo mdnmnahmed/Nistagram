@@ -71,9 +71,11 @@ const signin = async (req, res) => {
                 const isPasswordMatched = bcrypt.compareSync(password, savedUser.password)
                 if (isPasswordMatched) {
                     const token = jwt.sign({ _id: savedUser._id }, process.env.JWT_SECRET)
+                    const { _id, name, email } = savedUser;
                     return res.status(200).json({
                         message: "successfully signedin",
-                        token
+                        token,
+                        user: { _id, name, email }
                     })
                 } else {
                     return res.status(404).json({
