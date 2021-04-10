@@ -26,8 +26,8 @@ const RoutingStuff = () => {
     const history = useHistory();
     const { state, dispatch } = useContext(UserContext);
 
-    useEffect(() => {
-        const userCookieData = getCookie('user_data');
+    useEffect(() => { 
+        let userCookieData = getCookie('user_data');
         if (userCookieData) {
             userCookieData = JSON.parse(userCookieData);
 
