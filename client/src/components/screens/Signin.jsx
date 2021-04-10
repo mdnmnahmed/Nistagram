@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import M from 'materialize-css';
 import axios from 'axios';
 import { setCookie } from '../../utils/CookiesHelper';
 
+import { UserContext } from '../../App';
+
 const Signin = () => {
+
+    const { state, dispatch } = useContext(UserContext)
+
     const history = useHistory();
 
     const [email, setEmail] = useState("");
@@ -29,7 +34,9 @@ const Signin = () => {
             const signedInData = await axios.post(process.env.REACT_APP_API_URL + '/signin', userData);
             console.log('signedInData res: ', signedInData);
             setCookie('user_token', signedInData.data.token)
-            setCookie('user_data', JSON.stringify(signedInData.user))
+            setCookie('user_data', JSON.stringify(signedInData.data.user))
+
+            dispatch({type:'USER', payload: signedInData.data.user})
 
             M.toast({ html: signedInData.data.message, classes: 'green darken-4' })
             history.push('/');
