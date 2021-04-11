@@ -7,7 +7,7 @@ const PostModel = require('../models/postModel');
  * @returns 
  */
 const createPost = async (req, res) => {
-    const { title, body } = req.body;
+    const { title, body, photo } = req.body;
     if (!title || !body) {
         return res.status(422).json({
             error: "Please fill all fields"
@@ -20,6 +20,7 @@ const createPost = async (req, res) => {
     const newPost = new PostModel({
         title,
         body,
+        photo,
         postedBy: req.user
     });
 
