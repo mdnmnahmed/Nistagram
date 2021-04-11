@@ -37,7 +37,7 @@ const CreatePost = () => {
             const newPostData = {
                 title,
                 body,
-                pic: fileUrl
+                photo: fileUrl
             }
 
             const headers = {
