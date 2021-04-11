@@ -26,7 +26,7 @@ const RoutingStuff = () => {
     const history = useHistory();
     const { state, dispatch } = useContext(UserContext);
 
-    useEffect(() => { 
+    useEffect(() => {
         let userCookieData = getCookie('user_data');
         if (userCookieData) {
             userCookieData = JSON.parse(userCookieData);
@@ -34,7 +34,6 @@ const RoutingStuff = () => {
             dispatch({ type: 'USER', payload: userCookieData })
 
             history.push('/');
-
         } else {
             history.push('/signin');
         }
