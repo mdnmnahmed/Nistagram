@@ -36,13 +36,16 @@ const Signin = () => {
             setCookie('user_token', signedInData.data.token)
             setCookie('user_data', JSON.stringify(signedInData.data.user))
 
-            dispatch({type:'USER', payload: signedInData.data.user})
+            dispatch({ type: 'USER', payload: signedInData.data.user })
 
             M.toast({ html: signedInData.data.message, classes: 'green darken-4' })
             history.push('/');
         } catch (err) {
-            console.log('error occured: ', err.response.data.error);
-            return M.toast({ html: err.response.data.error, classes: 'red darken-4' })
+            console.log('error occured: ', err);
+            if (err.response && err.response.status == 404) {
+                return M.toast({ html: err.response.data.error, classes: 'red darken-4' })
+            }
+            return M.toast({ html: "Falied to Login, Try again", classes: 'red darken-4' })
         }
     }
 
