@@ -5,17 +5,18 @@ import { getCookie } from '../../utils/CookiesHelper';
 const Home = () => {
     const [postsData, setPostsData] = useState([]);
 
-    useEffect(() => {
-        const fetchAllPosts = async () => {
-            try {
-                const headers = { "Authorization": "bearer " + getCookie('user_token') }
-                const allPosts = await axios.get(process.env.REACT_APP_API_URL + '/post/all_posts', { headers })
-                console.log(allPosts.data.data);
-                setPostsData(allPosts.data.data)
-            } catch (error) {
-
-            }
+    const fetchAllPosts = async () => {
+        try {
+            const headers = { "Authorization": "bearer " + getCookie('user_token') }
+            const allPosts = await axios.get(process.env.REACT_APP_API_URL + '/post/all_posts', { headers })
+            console.log(allPosts.data.data);
+            setPostsData(allPosts.data.data)
+        } catch (error) {
+            console.log('Failed to fetch all posts : ', error);
         }
+    }
+
+    useEffect(() => {
         fetchAllPosts();
     }, []);
 
